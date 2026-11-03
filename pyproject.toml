@@ -1,0 +1,16 @@
+[project]
+name = "cperr"
+version = "1.0.0"
+description = "Extract useful errors from copied terminal output and copy them to the macOS clipboard"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+cperr = "cperr.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cperr"]

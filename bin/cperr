@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""cperr entry point. Resolves symlinks so it works when linked into $PATH."""
+
+import os
+import sys
+
+if sys.version_info < (3, 11):
+    sys.exit(
+        f"cperr requires Python 3.11+, found {sys.version.split()[0]}. "
+        "Install a newer Python (e.g. `brew install python@3.12`) and re-run install.sh."
+    )
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
+from cperr.cli import main  # noqa: E402
+
+if __name__ == "__main__":
+    sys.exit(main())
